@@ -24,4 +24,4 @@ apps:
     enabled: true
     namespace: test-apps
     chart: oci://ghcr.io/stefanprodan/charts/podinfo
-    version: 6.4.0
+    version: 6.4.1
