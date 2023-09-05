@@ -16,9 +16,6 @@ namespaces:
   kyverno:
     protected: true
 
-helmRepos:
-  kyverno: "https://kyverno.github.io/kyverno/"
-
   # define any private/public helm charts repos you would like to get charts from
   # syntax: repo_name: "repo_url"
   # only private repos hosted in s3 buckets are now supported
