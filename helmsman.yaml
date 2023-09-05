@@ -1,0 +1,27 @@
+# version: v3.4.0
+
+# context defines the context of this Desired State File.
+# It is used to allow Helmsman identify which releases are managed by which DSF.
+# Therefore, it is important that each DSF uses a unique context.
+context: test-infra # defaults to "default" if not provided
+
+# metadata -- add as many key/value pairs as you want
+metadata:
+  org: "example.com"
+  maintainer: "k8s-admin (me@example.com)"
+  description: "example Desired State File for demo purposes."
+
+# define your environments and their k8s namespaces
+namespaces:
+  test-apps:
+    protected: true
+
+  # define any private/public helm charts repos you would like to get charts from
+  # syntax: repo_name: "repo_url"
+  # only private repos hosted in s3 buckets are now supported
+
+  podinfo:
+    enabled: true
+    namespace: test-apps
+    chart: oci://ghcr.io/stefanprodan/charts/podinfo
+    version: 6.4.0
